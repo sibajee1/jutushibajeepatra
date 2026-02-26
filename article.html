@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Articles — Jutu Shibajee Patra</title>
+<link rel="stylesheet" href="css/style.css?v=999">
+</head>
+
+<body>
+
+<canvas id="mathCanvas"></canvas>
+
+<main id="app">
+
+<header class="main-header">
+
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="Search..." oninput="runSearch()" aria-label="Search site content">
+<div id="searchResults"></div>
+</div>
+
+<div class="hamburger" onclick="toggleMenu()">
+<span></span><span></span><span></span>
+</div>
+
+<nav class="nav-menu">
+<a href="index.html">Home</a>
+<a href="research.html">Research</a>
+<a href="teaching.html">Talk</a>
+<a href="article.html">Articles</a>
+<a href="about.html">About me</a>
+</nav>
+
+</header>
+
+<section style="padding-top:140px;">
+
+<h2 class="section-title">Articles & Insights</h2>
+
+<div id="articleGrid" class="research-grid"></div>
+
+</section>
+</main>
+<!-- MathJax -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$','$$'], ['\\[','\\]']]
+  }
+};
+</script>
+<footer class="site-footer">
+
+<div class="footer-social">
+<a href="https://www.linkedin.com/in/jutu-shibajee-patra-24311319b?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">LinkedIn</a>
+    <a href="https://x.com/iamsibajee" target="_blank">X</a>
+    <a href="https://github.com/sibajee1" target="_blank">GitHub</a>
+</div>
+
+<div class="footer-line"></div>
+
+<p class="footer-copy">© 2026 Jutu Shibajee Patra — All Rights Reserved.</p>
+
+</footer>
+
+</div>
+
+<script src="js/background.js?v=3"></script>
+<script src="js/navigation.js"></script>
+
+<script>
+
+/* ARTICLE DATA */
+
+const articleData=[
+{
+title:"Strengthening Vision Transformers through DINOv3 Representation Learning",
+body:"DINOv3 introduces a powerful self-supervised learning framework that significantly enhances the representational capacity of Vision Transformer (ViT) architectures. Unlike conventional supervised approaches, DINOv3 enables ViT models to learn semantically meaningful visual features directly from large-scale unlabeled data, reducing dependency on annotated datasets while improving generalization.The core of DINOv3 lies in its teacher–student distillation paradigm, where a momentum-updated teacher network guides the student model toward stable and invariant feature representations. Combined with multi-crop augmentation and centering mechanisms, this strategy effectively mitigates representation collapse and encourages the emergence of high-level semantic structure in the embedding space. As a result, ViT models trained with DINOv3 exhibit improved robustness to variations in scale, illumination, and viewpoint.From a theoretical perspective, DINOv3 promotes alignment and uniformity in feature distributions, leading to well-separated clusters corresponding to semantic concepts. These properties translate into superior transfer learning performance across downstream tasks such as image classification, object detection, and semantic segmentation. Empirically, DINOv3-trained ViTs demonstrate strong zero-shot and few-shot capabilities, highlighting their scalability in data-limited scenarios.Overall, DINOv3 provides a mathematically grounded and computationally efficient pathway for learning rich visual representations, positioning Vision Transformers as highly effective backbones for modern computer vision research and real-world intelligent systems."
+}
+];
+
+const aGrid=document.getElementById("articleGrid");
+
+if(aGrid){
+articleData.forEach((a,i)=>{
+aGrid.innerHTML+=`
+<div class="research-card" onclick="location.href='article_post.html?id=${i}'">
+<h3>${a.title}</h3>
+<p>Click to read article</p>
+</div>`;
+});
+}
+
+</script>
+
+</body>
+</html>

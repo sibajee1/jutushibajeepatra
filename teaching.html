@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teaching — Jutu Shibajee Patra</title>
+<link rel="stylesheet" href="css/style.css?v=999">
+</head>
+
+<body>
+
+<canvas id="mathCanvas"></canvas>
+
+<main id="app">
+
+<header class="main-header">
+
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="Search..." oninput="runSearch()" aria-label="Search site content">
+<div id="searchResults"></div>
+</div>
+
+<div class="hamburger" onclick="toggleMenu()">
+<span></span><span></span><span></span>
+</div>
+
+<nav class="nav-menu">
+<a href="index.html">Home</a>
+<a href="research.html">Research</a>
+<a href="teaching.html">Talk</a>
+<a href="article.html">Articles</a>
+<a href="about.html">About me</a>
+</nav>
+
+</header>
+
+<section style="padding-top:140px;">
+
+<h2 class="section-title">Webinar & Presentation</h2>
+
+<div id="teachingGrid" class="research-grid"></div>
+
+</section>
+</main>
+<!-- MathJax -->
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$','$$'], ['\\[','\\]']]
+  }
+};
+</script>
+<footer class="site-footer">
+
+<div class="footer-social">
+<a href="https://www.linkedin.com/in/jutu-shibajee-patra-24311319b?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">LinkedIn</a>
+    <a href="https://x.com/iamsibajee" target="_blank">X</a>
+    <a href="https://github.com/sibajee1" target="_blank">GitHub</a>
+
+</div>
+
+<div class="footer-line"></div>
+
+<p class="footer-copy">© 2026 Jutu Shibajee Patra — All Rights Reserved.</p>
+
+</footer>
+
+</div>
+
+<script src="js/background.js?v=3"></script>
+<script src="js/navigation.js"></script>
+
+<script>
+
+/* TEACHING DATA */
+
+const teachingData=[
+{
+title:"Preserving Nature With the Power of Data Science and Mathematics",
+desc:"28-07-2025,HBTU Kanpur",
+img:"assets/images/teach8.png"
+}
+];
+
+const tGrid=document.getElementById("teachingGrid");
+
+if(tGrid){
+teachingData.forEach((t,i)=>{
+tGrid.innerHTML+=`
+<div class="research-card" onclick="location.href='teaching_post.html?id=${i}'">
+<h3>${t.title}</h3>
+<p>${t.desc}</p>
+</div>`;
+});
+}
+
+</script>
+
+</body>
+</html>
