@@ -26,7 +26,7 @@
 
 <nav class="nav-menu">
 <a href="index.html">Home</a>
-<a href="research.html">Research</a>
+<a href="research.html">Works</a>
 <a href="teaching.html">Talk</a>
 <a href="article.html">Articles</a>
 <a href="about.html">About me</a>
@@ -71,31 +71,7 @@ window.MathJax = {
 <script src="js/background.js?v=3"></script>
 <script src="js/navigation.js"></script>
 
-<script>
 
-/* TEACHING DATA */
-
-const teachingData=[
-{
-title:"Preserving Nature With the Power of Data Science and Mathematics",
-desc:"28-07-2025,HBTU Kanpur",
-img:"assets/images/teach8.png"
-}
-];
-
-const tGrid=document.getElementById("teachingGrid");
-
-if(tGrid){
-teachingData.forEach((t,i)=>{
-tGrid.innerHTML+=`
-<div class="research-card" onclick="location.href='teaching_post.html?id=${i}'">
-<h3>${t.title}</h3>
-<p>${t.desc}</p>
-</div>`;
-});
-}
-
-</script>
 
 </body>
 </html>

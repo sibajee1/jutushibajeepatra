@@ -26,7 +26,7 @@
 
 <nav class="nav-menu">
 <a href="index.html">Home</a>
-<a href="research.html">Research</a>
+<a href="research.html">Works</a>
 <a href="teaching.html">Talk</a>
 <a href="article.html">Articles</a>
 <a href="about.html">About me</a>
@@ -87,23 +87,7 @@ window.MathJax = {
 <script src="js/background.js?v=3"></script>
 <script src="js/navigation.js"></script>
 
-<script>
 
-/* LOAD SINGLE RESEARCH */
-
-const params = new URLSearchParams(window.location.search);
-const id = params.get("id");
-
-if(id !== null && typeof researchData !== "undefined"){
-
-document.getElementById("researchTitle").innerText = researchData[id].title;
-document.getElementById("researchDesc").innerText = researchData[id].desc;
-document.getElementById("researchImg").src = researchData[id].img;
-document.getElementById("researchPdf").href = researchData[id].pdf;
-
-}
-
-</script>
 
 </body>
 </html>

@@ -26,7 +26,7 @@
 
 <nav class="nav-menu">
 <a href="index.html">Home</a>
-<a href="research.html">Research</a>
+<a href="research.html">Works</a>
 <a href="teaching.html">Talk</a>
 <a href="article.html">Articles</a>
 <a href="about.html">About me</a>
@@ -42,10 +42,15 @@
 
 <h2 id="articleTitle"></h2>
 
-<p id="articleBody"></p>
-</main>
+<!-- IMPORTANT: Use div instead of p -->
+<div id="articleBody" style="margin-top:25px; line-height:1.9; text-align:justify;"></div>
+
+</div>
 
 </section>
+
+</main>
+
 <!-- MathJax -->
 <script>
 window.MathJax = {
@@ -55,12 +60,13 @@ window.MathJax = {
   }
 };
 </script>
+
 <footer class="site-footer">
 
 <div class="footer-social">
-<a href="https://www.linkedin.com/in/jutu-shibajee-patra-24311319b?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank">LinkedIn</a>
-    <a href="https://x.com/iamsibajee" target="_blank">X</a>
-    <a href="https://github.com/sibajee1" target="_blank">GitHub</a>
+<a href="https://www.linkedin.com/in/jutu-shibajee-patra-24311319b" target="_blank">LinkedIn</a>
+<a href="https://x.com/iamsibajee" target="_blank">X</a>
+<a href="https://github.com/sibajee1" target="_blank">GitHub</a>
 </div>
 
 <div class="footer-line"></div>
@@ -68,8 +74,6 @@ window.MathJax = {
 <p class="footer-copy">© 2026 Jutu Shibajee Patra — All Rights Reserved.</p>
 
 </footer>
-
-</div>
 
 <script src="js/background.js?v=3"></script>
 <script src="js/navigation.js"></script>
@@ -132,19 +136,22 @@ body:[
 ]
 }
 ];
+/* LOAD ARTICLE */
 
-const params=new URLSearchParams(window.location.search);
-const id=params.get("id");
+const articleParams = new URLSearchParams(window.location.search);
+const articleId = articleParams.get("id");
 
-if(id!==null){
+if(articleId !== null && articleData[articleId]){
 
-document.getElementById("articleTitle").innerText=articleData[id].title;
+document.getElementById("articleTitle").innerText = articleData[articleId].title;
+
 const container = document.getElementById("articleBody");
 container.innerHTML = "";
 
-articleData[id].body.forEach(paragraph=>{
-container.innerHTML += `<p>${paragraph}</p>`;
+articleData[articleId].body.forEach(paragraph=>{
+container.innerHTML += `<p style="margin-bottom:20px;">${paragraph}</p>`;
 });
+
 }
 
 </script>
