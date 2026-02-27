@@ -22,7 +22,7 @@ github: "https://github.com/sibajee1/voter_data_cvt_to_csv"
 {
 type: "project",
 title: "Sentiment Analysis on a instagram dataset",
-desc: "I found an Instagram dataset containing 30,000 entries. The dataset includes features such as post type, number of likes, comments, shares, and follower count. Based on this data, I performed sentiment analysis and applied machine learning techniques to determine the best time to upload posts.",
+desc: "I found an Instagram dataset containing 30,000 entries. The dataset includes features such as post type, number of likes, comments, shares, and follower count and lots of important features. Based on this data, I performed sentiment analysis and appliy a machine learning technique(Random forest) to predict using some important feature, is this post goes viral or not ?",
 github: "https://github.com/sibajee1/sentiment_analysis"
 },
 {
